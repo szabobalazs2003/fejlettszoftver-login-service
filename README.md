@@ -5,6 +5,18 @@ A service a felhasználók regisztrációjáért, autentikációjáért és prof
 Az autentikáció JWT-alapú:
 - Az **access token** Bearer tokenként, az `Authorization` headerben küldendő.
 - A **refresh token** HttpOnly cookie-ban tárolódik, ezért JavaScriptből nem érhető el.
+- A lokális futtatáshoz kell egy ./config/appsettings.dev.json fájl:
+```json
+{
+    "database":{
+        "name": "db_name",
+        "host": "host",
+        "port": "db_port",
+        "username": "dbuser",
+        "password": "dbpassword"
+    }
+}
+```
 
 ## API Endpoints
 
