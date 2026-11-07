@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     "rest_framework_simplejwt.token_blacklist",
     'corsheaders',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +128,8 @@ DATABASES = {
         'PORT': config["database"]["port"]
     }
 }
+
+AUTH_USER_MODEL = 'accounts.User'
 
 
 # Password validation
