@@ -37,4 +37,17 @@ jobs:
           context: .
           push: true
           tags: ${{ env.DOCKER_TAG }}
+
+      - name: Deploy
+        env:
+          GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          SERVICE_NAME: login-service
+          IMAGE: ${{ env.DOCKER_TAG }}
+        run: |
+          gh workflow run deploy.yml \
+            --repo szabobalazs2003/fejlettszoftver-argo \
+            --ref main \
+            -f service="$SERVICE_NAME" \
+            -f image="$IMAGE"
+
           
