@@ -44,7 +44,7 @@ jobs:
           SERVICE_NAME: login-service
           IMAGE: ${{ env.DOCKER_TAG }}
         run: |
-          gh workflow run deploy.yml \
+          gh workflow run deploy.yaml \
             --repo szabobalazs2003/fejlettszoftver-argo \
             --ref main \
             -f service="$SERVICE_NAME" \
