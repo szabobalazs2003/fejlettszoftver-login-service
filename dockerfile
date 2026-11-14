@@ -6,6 +6,7 @@ ENV PIP_NO_CACHE_DIR=1
 
 WORKDIR /app
 
+COPY requirements.txt .
 COPY requirements-pod.txt .
 
 RUN pip install -r requirements-pod.txt
