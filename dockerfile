@@ -18,6 +18,6 @@ RUN useradd --create-home appuser \
 
 USER appuser
 
-EXPOSE 8000
+EXPOSE 8080
 
-CMD ["gunicorn", "accountservice.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "accountservice.wsgi:application", "--bind", "0.0.0.0:8080"]
